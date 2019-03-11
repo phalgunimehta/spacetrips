@@ -45,6 +45,7 @@
   *:after {
       box-sizing: border-box;    
   }
+  
   html,
   body {
       font-family: 'D-Din';
@@ -63,11 +64,12 @@
     border-color:transparent;
     background-color: white;
   }
-.navbar-nav{
-  margin: .1vw;  
+.navbar-right{
+  margin-inline-end: 2%; 
 }
 .navbar-toggle{
   border: none;
+   
 }
 span.icon-bar{
   background-color: rgb(44, 18, 18) !important;
@@ -108,10 +110,7 @@ span.icon-bar{
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
   background-color: transparent;
 }
-.nav.navbar-nav.navbar-right{
-  position: relative;
-  left: -5%;
-}
+
 /*Landing page*/
 .landing-container{
   padding-top: 70px;
@@ -157,17 +156,17 @@ h3{
   bottom: 25px;
 }
 @media (max-width:576px){
-  #logo{
-    display: none;
-  }
+#logo{
+  display: none;
+}
 }
 video.embed-responsive-item{
   padding-top: 10%;
 }
 #trips>h2{
-text-shadow: 4px -3px gainsboro;
-color: darkslategrey;
-font-size: 3em;
+  text-shadow: 4px -3px gainsboro;
+  color: darkslategrey;
+  font-size: 3em;
 }
 #trips>h3{
   font-size: 2.5em;
@@ -192,6 +191,11 @@ font-size: 3em;
   font-family: 'D-Din-Bold';
   font-weight: 900;
 }
+@media (min-width: 1024px) {
+  #footer1{
+    width: 70%;
+  }
+  }
 .page-footer a{
   color:rgb(44, 18, 18)!important;
   text-decoration: none;
@@ -205,7 +209,7 @@ ul{
   list-style-type: none;  
 }
 .follow-us-on{
-text-indent: 10vw;  
+  text-indent: 10vw;  
 }
 .social-media-container{
   display: inline-flex; 
@@ -253,9 +257,9 @@ text-indent: 10vw;
   opacity: 1;
 }
 h4{
- font-family: 'D-Din-Bold';
- font-stretch: extra-expanded;
- font-weight: 900;
+  font-family: 'D-Din-Bold';
+  font-stretch: extra-expanded;
+  font-weight: 900;
 }
 /*Footer2*/
 .footer-copyright{
@@ -263,15 +267,194 @@ h4{
   padding-bottom: 1%;
   border-top: .2px solid #e7e6e7; 
   background-color: rgb(221, 150, 150);
+  
+  
 }
 .footer-copyright a{
   color: #4a494a !important; 
+  padding: 4%
+  
 }
-@media screen and (max-width: 768px)
-{.footer-copyright a {
-    font-size: .8em!important;
+@media screen and (max-width: 768px){
+.footer-copyright a {
+  font-size: .8em!important;
 }
+}
+/*Modal login Form*/
+.modal{
+  padding-right: 1.5%;
+}
+@media (max-width: 575.98px) {
+.modal{
+  width: 100%;
+  }
+  }
+  @media (min-width: 576px) {
+  .modal{
+    width: 50%;
+  }
+  }
+  
+@media (min-width: 576px) {
+#modal1{
+  margin-left: 50.5%;
+}
+}   
+.modal-content{
+  border: 0px;
+  box-shadow: 0px 5px #a98d27 ; 
 }
 
+.close {
+  position: absolute;
+  right: 4%;
+  top: 0;
+  color: #000;
+  font-size: 42px;
+  font-weight: bold;
+  opacity: .5;
+}
+.imgcontainer{
+   display: flex;
+   direction: row;
+   background-image: url('./assets/images/skybg.gif');
+   background-size: cover;
+   width: 100%;
+   padding-left: 5%;
+ }
+h1#modalslogan{
+  width: 70%;
+  color: #a98d27 !important;
+  margin-bottom: .5rem;
+  font-family: 'D-Din' !important;
+  text-align: center;
+  text-shadow: -4px -4px #332e12;  
+}
+#inputcontainer{
+  padding-top: 7%;
+  padding-left: 2%;
+  padding-bottom: 7%;
+  color: #161408;
+  font-weight: bolder;
+  align-items: center;
+  width: 100%;
+} 
 
+input[type="radio"] {
+  position: fixed;
+  visibility: hidden;
+    
+}
 
+input:not([type="radio"]) {
+  appearance: none;
+  background-color: white;
+  display: block;
+  transition: 0ms ease;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  max-height: 0;
+  margin-left: 0;
+  padding: 0 10px;
+  overflow: hidden;
+  width: 60%;
+  opacity: 0;
+  font-size: 16px;
+  text-align: center;
+  outline: 0;
+  position: relative;
+  left:20%;
+  
+}
+/*  show input based on radio selection */
+[id="sign-in"]:checked ~ input.sign-in ,
+[id="sign-up"]:checked ~ input.sign-up,
+[id="reset"]:checked ~ input.reset {
+  max-height: 40px;
+  padding: 5px;
+  margin: 20px 0;
+  opacity: 1;
+}
+
+[id="sign-up"]:checked ~ #pswInput1{
+ margin-top: -20px;
+ display: none
+}
+[id="reset"]:checked ~ #pswInput1{
+  display: none
+ }
+
+/* submit button */
+#button1 {
+  width: 60%;
+  height: 40px;
+  border-radius: 7px;    
+  background-color: #a98d27;
+  font-size: 0;
+  position: relative;
+  left:20%;
+  outline: 0px
+}
+#button1::before { font-size: 16px; }
+    
+/* show button text based on radio selection*/
+[id="sign-in"]:checked ~ button:before { content: 'Sign In'; }
+[id="sign-up"]:checked ~ button:before { content: 'Sign Up'; }
+[id="reset"]:checked ~ button:before { content: 'Reset password'; }
+
+[id="reset"]:checked ~ input#btn1 { display: none;}
+[id="sign-up"]:checked ~ input#btn1{ position: relative;top:140px; }
+
+label {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  cursor: pointer;
+  color: rgb(3, 53, 40);
+  transition: 300ms ease;
+  width: calc(100% / 3 - 7px);
+}
+  
+label::after {
+  content: '';
+  border: 10px solid transparent;
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - 10px);
+  transition: inherit;
+}
+/*  set active label marker*/
+[id="sign-in"]:checked ~ [for="sign-in"],
+[id="sign-up"]:checked ~ [for="sign-up"],
+[id="reset"]:checked ~ [for="reset"] {
+color: green;
+    
+}
+#btn1{
+  margin-top: -30px;
+  position: relative;
+  top:110px;
+  left: 0%;
+  z-index: 10;
+  background-image: url("./assets/images/eye.jpeg");
+  background-repeat: no-repeat;
+  background-size: 33px 26px;
+  background-color: transparent;
+  border: transparent;
+  color: transparent;
+  transition: 0ms
+}
+@media (max-width :768px){
+  #btn1{
+    position: relative;
+    left:68.7%
+  }
+}
+@media (min-width :769px){
+  #btn1{
+    position: relative;
+    left:73%
+  }
+}
